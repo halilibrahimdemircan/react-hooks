@@ -1,9 +1,13 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const FunctionalComponent = () => {
   const [count, setCount] = useState(0)
   const [age, setAge] = useState(4)
   const [user, setUser] = useState({ name: 'Halo', age: 30, email: 'halilibrahimdemircan@gmail.com' })
+
+  useEffect(() => {
+    console.log('useeffect')
+  }, [count, user])
 
   const increase = () => {
     setCount(count + 1)

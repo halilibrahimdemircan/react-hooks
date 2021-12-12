@@ -6,8 +6,11 @@ class ClassComponent extends React.Component {
     this.state = { count: 0 }
   }
   incerase = () => {
-    console.log('clicked')
+    // console.log('clicked')
     this.setState({ count: this.state.count + 1 })
+  }
+  componentDidMount() {
+    console.log('class component mounted')
   }
 
   render() {
