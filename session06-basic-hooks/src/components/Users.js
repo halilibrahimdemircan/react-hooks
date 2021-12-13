@@ -31,7 +31,7 @@ const Users = () => {
   }, [])
 
   const postNewUsers = () => {
-    axios.post('https://jsonplaceholder.typicode.com/posts', { data }).then((res) => console.log(res.data))
+    axios.post('https://jsonplaceholder.typicode.com/posts', { data }).then((res) => setNewUsers(res.data.data))
   }
 
   // console.log(users)
@@ -43,6 +43,13 @@ const Users = () => {
       <button onClick={postNewUsers}>Post Users</button>
       <div className="users-cards">
         {users.map((user) => (
+          <div key={user.id} className="useritem">
+            <img src={`https://avatars.dicebear.com/v2/avataaars/${user.id}.svg`} alt="" />
+            {user.name}
+          </div>
+        ))}
+
+        {newUsers.map((user) => (
           <div key={user.id} className="useritem">
             <img src={`https://avatars.dicebear.com/v2/avataaars/${user.id}.svg`} alt="" />
             {user.name}
