@@ -6,8 +6,14 @@ const FunctionalComponent = () => {
   const [user, setUser] = useState({ name: 'Halo', age: 30, email: 'halilibrahimdemircan@gmail.com' })
 
   useEffect(() => {
-    console.log('useeffect')
-  }, [count, user])
+    console.log('use effect')
+    let timeout = setTimeout(() => {
+      alert('Hello')
+    })
+    return () => {
+      console.log('functional com unmounted')
+    }
+  }, [])
 
   const increase = () => {
     setCount(count + 1)
@@ -16,6 +22,7 @@ const FunctionalComponent = () => {
   const updateUser = () => {
     setUser({ ...user, name: 'Aydın' })
   }
+
   return (
     <div className="function">
       <h2>Functional Component</h2>

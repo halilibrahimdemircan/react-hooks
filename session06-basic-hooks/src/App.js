@@ -5,13 +5,15 @@ import Welcome from './pages/Welcome'
 import Product from './pages/Product'
 import ProductDetail from './pages/ProductDetail'
 import { useState } from 'react'
+import Users from './components/Users'
 
 function App() {
   const [toggleClass, setToggleClass] = useState(true)
   return (
     <div className="App">
-      {<ClassComponent />}
-      <FunctionalComponent />
+      <Users />
+      {/* {<ClassComponent />}
+      <FunctionalComponent /> */}
 
       {/* <h1>CLARUSWAY</h1>
 
